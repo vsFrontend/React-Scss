@@ -1,0 +1,14 @@
+{
+  "printWidth": 100,
+  "singleQuote": false,
+  "editor.formatOnSave": true,
+  "proseWrap": "always",
+  "tabWidth": 2,
+  "indent_size": 4,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": true,
+  "semi": false,
+  "semicolons": true,
+  "endOfLine": "auto",
+  "trailingComma": "none"
+}
