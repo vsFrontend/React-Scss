@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 
-/* eslint-disable react/react-in-jsx-scope */
 function Home() {
   return (
     <div className="App">

@@ -1,36 +1,17 @@
-@import 'utils/mixin';
-@import 'utils/media_query';
-@import 'variable';
+@import "utils/mixin";
+@import "utils/media_query";
+@import "variable";
 
-/*1. RESET AND TYPHOGRAPHY */
+@import "base/reset";
+@import "base/typhography";
 
-//1.1 reset
-@import 'base/reset';
-//1.2 typhography
-@import 'base/typhography';
+@import "./pages/home";
+@import "./pages/notFound";
 
-/*2. Pages */
-//2.1 Home
-@import './pages/home';
-@import './pages/notFound';
+@import "components/input";
+@import "components/button";
 
-
-/*3. COMPONENTS */
-// 3.1 Input
-@import 'components/input';
-@import 'components/button';
-
-
-/*4. Layouts */
-// 4.1 header
 @import "layout/header";
-// 4.2 footer
 @import "layout/footer";
 
-
-/*5. HELPERS */
-// @import 'elements/helpers';
-// CUSTOME by Bilal
-
 @import "custom.scss";
-

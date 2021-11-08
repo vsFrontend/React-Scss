@@ -2,7 +2,6 @@
   -webkit-#{$property}: #{$value};
   -moz-#{$property}: #{$value};
   -ms-#{$property}: #{$value};
-  // -o-#{$property}: #{$value};
   #{$property}: #{$value};
 }
 
@@ -13,6 +12,7 @@
 @mixin border-radius($radius: 5px) {
   @include prefix("border-radius", $radius);
 }
+
 
 @mixin box-shadow($vals) {
   @include prefix("box-shadow", $vals);
@@ -45,36 +45,23 @@
   opacity: 1;
 }
 
-// Vertical centering.
-// Note: You should set parent element: transform-style: preserve-3d;
-// @see http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
 @mixin vertical-align($position: absolute) {
   position: $position;
   top: 50%;
   @include transform(translateY(-50%));
 }
 
-/// Horizontal, vertical or absolute centering.
-@mixin center($width: null, $height: null) {
+@mixin absCenter() {
   position: absolute;
   top: 50%;
   left: 50%;
-  @if not $width and not $height {
-    @include transform(translate(-50%, -50%));
-  } @else if $width and $height {
-    width: $width;
-    height: $height;
-    margin-top: -($width / 2);
-    margin-left: -($height / 2);
-  } @else if not $height {
-    margin-left: -($width / 2);
-    @include transform(translateY(-50%));
-    width: $width;
-  } @else {
-    margin-top: -($height / 2);
-    @include transform(translateX(-50%));
-    height: $height;
-  }
+  @include transform(translate(-50%, -50%));
+}
+
+@mixin fixed($top: 0, $left: 0) {
+  position: fixed;
+  top: $top;
+  left: $left;
 }
 
 @mixin flex-center {
@@ -96,13 +83,6 @@
     display: table;
     clear: both;
   }
-}
-
-@mixin aBscenter {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 @mixin circle($width, $background) {

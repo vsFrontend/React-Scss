@@ -1,12 +1,11 @@
 input {
   padding: 7px;
   border-radius: 6px;
-  font-size: 16px;
   background: $color-white;
   border: 2px solid transparent;
-  height: 36px;
+  height: 3.6rem;
+  @include border-radius(5px);
   &:focus {
     border: 2px solid #000;
-    border-radius: 4px;
   }
 }
