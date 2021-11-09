@@ -9,7 +9,7 @@
   @include prefix("user-select", $vals);
 }
 
-@mixin border-radius($radius: 5px) {
+@mixin border-radius($radius: 0.5rem) {
   @include prefix("border-radius", $radius);
 }
 
@@ -58,7 +58,7 @@
   @include transform(translate(-50%, -50%));
 }
 
-@mixin fixed($top: 0, $left: 0) {
+@mixin positionFixed($top: 0, $left: 0) {
   position: fixed;
   top: $top;
   left: $left;
@@ -129,17 +129,17 @@
   input[type="checkbox"]:checked ~ label {
     &:before {
       background-color: $color;
-      border: 2px solid rgba(#000, 0.2);
+      border: 0.2rem solid rgba(#000, 0.2);
     }
   }
 }
 
 @mixin section-standard() {
-  padding: 70px 0;
+  padding: 7.0rem 0;
   @include media("<sm") {
-    padding: 45px 0;
+    padding: 4.5rem 0;
   }
   @include media("<xs") {
-    padding: 35px 0;
+    padding: 3.5rem 0;
   }
 }
