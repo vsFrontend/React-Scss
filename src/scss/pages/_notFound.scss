@@ -1,0 +1,32 @@
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  @include flex-center();
+  flex-direction: column;
+
+  @include media("<xs") {
+    background-color: rgba(0, 243, 41, 0.26);
+  }
+
+  @include media(">xs", "<sm") {
+    background-color: rgba(243, 207, 0, 0.26);
+  }
+
+  @include media(">phone", "<tablet") {
+    background-color: rgba(0, 0, 255, 0.144);
+  }
+
+  @include media(">tablet", "<pc") {
+    background-color: rgba(128, 0, 128, 0.192);
+  }
+
+  @include media(">pc") {
+    background-color: rgba(255, 0, 255, 0.151);
+  }
+}
+
+.content {
+  @include flex-center();
+  flex-direction: column;
+}

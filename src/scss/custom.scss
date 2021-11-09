@@ -1,0 +1,4 @@
+.loading_img {
+  animation: flip_animation 2s infinite;
+  @include positionFixed(50%, 50%);
+}

@@ -1,0 +1,16 @@
+.btn {
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  border: none;
+  padding: 0 5rem;
+  height: 4.5;
+  line-height: 4.5rem;
+  @include border-radius(0.7rem);
+  background: $color-white;
+  color: #696969;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  &:hover {
+    background: rgba($color-white, 0.9);
+  }
+}

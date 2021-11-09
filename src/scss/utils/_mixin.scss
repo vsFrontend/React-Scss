@@ -1,0 +1,145 @@
+@mixin prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+@mixin user-select($vals: none) {
+  @include prefix("user-select", $vals);
+}
+
+@mixin border-radius($radius: 0.5rem) {
+  @include prefix("border-radius", $radius);
+}
+
+
+@mixin box-shadow($vals) {
+  @include prefix("box-shadow", $vals);
+}
+
+@mixin backface($vals: hidden) {
+  @include prefix("backface-visibility", $vals);
+}
+
+@mixin perspective($vals) {
+  @include prefix("perspective", $vals);
+}
+
+@mixin max-area($index: 10) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $index;
+}
+
+@mixin hidden() {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@mixin show() {
+  visibility: visible;
+  opacity: 1;
+}
+
+@mixin vertical-align($position: absolute) {
+  position: $position;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+@mixin absCenter() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+}
+
+@mixin positionFixed($top: 0, $left: 0) {
+  position: fixed;
+  top: $top;
+  left: $left;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin font-general($font-family: arial, $font-size: 14, $font-weight: 400, $line-height: 1.5em) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin circle($width, $background) {
+  width: $width;
+  height: $width;
+  @include border-radius(50%);
+  background-color: $background;
+}
+
+@mixin checkbox-color($color) {
+  label {
+    &:before {
+      background-color: $color;
+    }
+  }
+  input[type="checkbox"]:checked ~ label {
+    &:before {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin radio-color($color) {
+  label {
+    &:before {
+      background-color: $color;
+    }
+  }
+  input[type="radio"]:checked ~ label {
+    background-color: rgba($color, 0.5);
+
+    &:before {
+      background-color: darken($color, 10%);
+    }
+  }
+}
+
+@mixin checkbox-color($color) {
+  label {
+    &:before {
+      background-color: $color;
+    }
+  }
+  input[type="checkbox"]:checked ~ label {
+    &:before {
+      background-color: $color;
+      border: 0.2rem solid rgba(#000, 0.2);
+    }
+  }
+}
+
+@mixin section-standard() {
+  padding: 7.0rem 0;
+  @include media("<sm") {
+    padding: 4.5rem 0;
+  }
+  @include media("<xs") {
+    padding: 3.5rem 0;
+  }
+}

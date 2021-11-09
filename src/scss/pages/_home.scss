@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+  .App-logo {
+    height: 40vmin;
+    &:hover {
+      animation: Spin infinite 4s ease-in-out;
+    }
+  }
+  .App-header {
+    background-color: $secondary;
+    min-height: 100vh;
+    @include flex-center;
+    flex-direction: column;
+    color: $color-white;
+    p {
+      color: $color-white;
+    }
+  }
+  .App-link {
+    color: $tertiary;
+  }
+}

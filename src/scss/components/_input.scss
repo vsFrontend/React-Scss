@@ -1,0 +1,11 @@
+input {
+  padding: 0.7rem;
+  border-radius: 0.6rem;
+  background: $color-white;
+  border: 0.2rem solid transparent;
+  height: 3.6rem;
+  @include border-radius(0.5rem);
+  &:focus {
+    border: 0.2rem solid #000;
+  }
+}
